@@ -1,0 +1,17 @@
+var img1=new SimpleImage("hilton.jpg");
+var img2=new SimpleImage(img1.getWidth(),img1.getHeight());
+for(var pixel of img2.values()){
+    var NewG=255-pixel.getRed();
+}
+for(var pixel of img1.values()){
+    if(pixel.getX()<img1.getWidth()/3){
+        pixel.setRed(NewG);
+    }
+    else if(pixel.getX()<img1.getWidth()/3*2&&pixel.getX()>img1.getWidth()/3){
+        pixel.setGreen(NewG);
+    }
+    else{
+        pixel.setBlue(NewG);
+    }
+}
+print(img1);
